@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+nav div {
+  width: 10%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: purple;
+}
+nav ul {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+main {
+  
+  height: 1200px;
+  width: 700 px;
+  border: 5px solid red;
+  background-color: white;
+  display:grid;
+  gap:20px; 
+  grid-template-areas : /*Create a blueprint of your exxcel table and add raw column and value that shoudl go inside */
+    ". logo ."
+    "aboutMe aboutMe  aboutMe "
+    "hobbie hobbie hobbie"
+    "contact contact contact"
+    "employment employment employment"
+    "education education education";
+  column-gap : 10px;
+
+}
+
+main div {
+  /*margin: 20px auto; /* To horizontally center a block element (like div)*/
+  height: 14%; /* */
+  /*width: 70%;*/
+  background-color: purple;
+  color: white;
+  padding: 10px;
+  
+}
+
+ main div .logo { /*attach value to the table above grid-template-areas */
+grid-area: logo;
+ }
+
+ main div .aboutMe {
+  grid-area: aboutMe;
+}
+
+main div .hobbie {
+  grid-area: hobbie;
+}
+
+main div .contact {
+  grid-area: contact;
+}
+
+main div .employment { 
+  grid-area: employment;
+}
+
+main div .education {
+  grid-area: education;
+}
+
+/* assign format of grid-template area per display*/
+@media screen and (min-width:550px){ 
+  main {
+    grid-template-areas :
+    ". logo ."
+    "aboutMe aboutMe  aboutMe "
+    "hobbie hobbie hobbie"
+    "contact contact contact"
+    "employment employment employment"
+    "education education education";
+  column-gap : 10px;
+          }
+}
+@media screen and (max-width:768px){ 
+  main {
+    grid-template-areas :
+    "aboutMe aboutMe logo logo logo logo"
+    "aboutMe aboutMe  logo logo logo logo"
+    "aboutMe aboutMe  logo logo logo logo"
+    "hobbie hobbie contact contact contact"
+    "employment employment employment employment employment"
+    "employment employment employment employment employment"
+    "employment employment employment employment employment"
+    "employment employment employment employment employment"
+    "education  education education education education"
+    "education  education education education education";
+  column-gap : 10px;
+          }
+}
